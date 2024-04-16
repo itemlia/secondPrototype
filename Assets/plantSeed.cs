@@ -14,5 +14,13 @@ public class plantSeed : MonoBehaviour
    {
       seed.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - offset);
    }
+
+   private void OnTriggerEnter(Collider other)
+   {
+      if (other.CompareTag("ground"))
+      {
+         seed.tag = "planted";
+      }
+   }
 }
 
