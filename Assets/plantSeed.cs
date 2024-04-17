@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -11,7 +12,10 @@ public class plantSeed : MonoBehaviour
    public Vector3 offset;
 
    public float distance;
+   private string planted = "planted";
 
+   public TextMeshProUGUI textComp;
+  
    private void Update()
    {
       raycastSeed();
@@ -35,6 +39,7 @@ public class plantSeed : MonoBehaviour
              left.transform.CompareTag("ground") || right.transform.CompareTag("ground"))
          {
             seed.tag = "planted";
+            textComp.text = planted;
          }
       }
    }
