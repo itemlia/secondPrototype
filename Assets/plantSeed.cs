@@ -21,7 +21,7 @@ public class plantSeed : MonoBehaviour
       raycastSeed();
    }
 
-   public void OnMouseDrag()
+   private void OnMouseDrag()
    {
       seed.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - offset);
    }
