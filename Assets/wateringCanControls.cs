@@ -30,22 +30,22 @@ public class wateringCanControls : MonoBehaviour
 
       // lineRender.enabled = true;
       // lineRender.SetPosition(distance, can.transform.position);
-      
+
       RaycastHit2D down = Physics2D.Raycast(can.transform.position, Vector2.down, distance);
       Debug.DrawRay(can.transform.position, Vector2.down * distance, Color.black);
       RaycastHit2D up = Physics2D.Raycast(can.transform.position, Vector2.up, distance);
-      Debug.DrawRay(can.transform.position, Vector2.up, Color.black);
+      Debug.DrawRay(can.transform.position, Vector2.up * distance, Color.black);
       RaycastHit2D left = Physics2D.Raycast(can.transform.position, Vector2.left, distance);
-      Debug.DrawRay(can.transform.position, Vector2.left, Color.black);
+      Debug.DrawRay(can.transform.position, Vector2.left * distance, Color.black);
       RaycastHit2D right = Physics2D.Raycast(can.transform.position, Vector2.right, distance);
-      Debug.DrawRay(can.transform.position, Vector2.right, Color.black);
-      
+      Debug.DrawRay(can.transform.position, Vector2.right * distance, Color.black);
+
       if (up.transform != null && down.transform != null && left.transform != null && right.transform != null)
       {
-         if (up.transform.CompareTag("planted"))
+         /*if (up.transform.CompareTag("planted"))
          {
             Debug.Log("up");
-         } 
+         }
          else if (down.transform.CompareTag("planted"))
          {
             Debug.Log(("down"));
@@ -57,11 +57,21 @@ public class wateringCanControls : MonoBehaviour
          else if (right.transform.CompareTag("planted"))
          {
             Debug.Log(("right"));
+         }*/
+
+
+         while (up.transform.CompareTag("planted") || down.transform.CompareTag("planted") ||
+                                                       left.transform.CompareTag("planted") ||
+                                                        right.transform.CompareTag("planted"))
+         {
+            Debug.Log("hit");
+            fillUpBar.SetActive(true);
+            fillUpBar.transform.position = fillUpBar.transform.position - scale;
          }
-         
       }
-      
-      // // RaycastHit2D hit = Physics2D.Raycast(can.transform.position, Vector2.down, distance);
+   }
+
+   // // RaycastHit2D hit = Physics2D.Raycast(can.transform.position, Vector2.down, distance);
       // Debug.DrawRay(can.transform.position, Vector2.down, Color.black);
       // if (hit.transform!= null)
       // {
@@ -73,4 +83,4 @@ public class wateringCanControls : MonoBehaviour
       //    }
       // }
    }
-}
+

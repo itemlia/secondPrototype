@@ -28,6 +28,8 @@ public class plantSeed : MonoBehaviour
 
    private void raycastSeed()
    {
+      Debug.DrawRay(seed.transform.position, Vector2.down * distance, Color.black);
+      
       RaycastHit2D down = Physics2D.Raycast(seed.transform.position, Vector2.down, distance);
       RaycastHit2D up = Physics2D.Raycast(seed.transform.position, Vector2.up, distance);
       RaycastHit2D left = Physics2D.Raycast(seed.transform.position, Vector2.left, distance);
@@ -39,6 +41,7 @@ public class plantSeed : MonoBehaviour
              left.transform.CompareTag("ground") || right.transform.CompareTag("ground"))
          {
             seed.tag = "planted";
+            Debug.Log("planted");
             textComp.text = planted;
          }
       }
