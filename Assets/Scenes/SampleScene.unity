@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 904983994}
   - component: {fileID: 904983993}
   - component: {fileID: 904983992}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,8 +823,6 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: -1}
   scale: {x: 0, y: 0, z: 0}
   distance: 1
-  line: {fileID: 0}
-  lineRender: {fileID: 0}
 --- !u!1 &1817158028
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,7 +835,7 @@ GameObject:
   - component: {fileID: 1817158031}
   - component: {fileID: 1817158030}
   - component: {fileID: 1817158029}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: seed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +982,7 @@ GameObject:
   - component: {fileID: 1850405473}
   - component: {fileID: 1850405472}
   - component: {fileID: 1850405471}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

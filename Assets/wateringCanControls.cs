@@ -7,14 +7,11 @@ public class wateringCanControls : MonoBehaviour
 {
    public GameObject can;
    public GameObject fillUpBar;
-   
+
    public Vector3 offset;
    public Vector3 scale;
 
    public float distance;
-
-   public Transform line;
-   public LineRenderer lineRender;
    private void Update()
    {
       waterPlant();
@@ -27,11 +24,7 @@ public class wateringCanControls : MonoBehaviour
 
    private void waterPlant()
    {
-
-      // lineRender.enabled = true;
-      // lineRender.SetPosition(distance, can.transform.position);
-
-      RaycastHit2D down = Physics2D.Raycast(can.transform.position, Vector2.down, distance);
+      RaycastHit2D down = Physics2D.CircleCast(can.transform.position, distance, Vector2.down, distance, 3);
       Debug.DrawRay(can.transform.position, Vector2.down * distance, Color.black);
       RaycastHit2D up = Physics2D.Raycast(can.transform.position, Vector2.up, distance);
       Debug.DrawRay(can.transform.position, Vector2.up * distance, Color.black);
@@ -40,47 +33,22 @@ public class wateringCanControls : MonoBehaviour
       RaycastHit2D right = Physics2D.Raycast(can.transform.position, Vector2.right, distance);
       Debug.DrawRay(can.transform.position, Vector2.right * distance, Color.black);
 
-      if (up.transform != null && down.transform != null && left.transform != null && right.transform != null)
+      if (down.transform != null)
       {
-         /*if (up.transform.CompareTag("planted"))
-         {
-            Debug.Log("up");
-         }
-         else if (down.transform.CompareTag("planted"))
-         {
-            Debug.Log(("down"));
-         }
-         else if (left.transform.CompareTag("planted"))
-         {
-            Debug.Log(("left"));
-         }
-         else if (right.transform.CompareTag("planted"))
-         {
-            Debug.Log(("right"));
-         }*/
-
-
-         while (up.transform.CompareTag("planted") || down.transform.CompareTag("planted") ||
-                                                       left.transform.CompareTag("planted") ||
-                                                        right.transform.CompareTag("planted"))
-         {
-            Debug.Log("hit");
-            fillUpBar.SetActive(true);
-            fillUpBar.transform.position = fillUpBar.transform.position - scale;
-         }
+         Debug.Log("hooray");
       }
-   }
 
-   // // RaycastHit2D hit = Physics2D.Raycast(can.transform.position, Vector2.down, distance);
-      // Debug.DrawRay(can.transform.position, Vector2.down, Color.black);
-      // if (hit.transform!= null)
+      // if (up.transform != null && down.transform != null && left.transform != null && right.transform != null)
       // {
-      //    while (hit.transform.CompareTag("planted"))
+      //    while (up.transform.CompareTag("planted") || down.transform.CompareTag("planted") ||
+      //           left.transform.CompareTag("planted") ||
+      //           right.transform.CompareTag("planted"))
       //    {
       //       Debug.Log("hit");
-      //       //fillUpBar.SetActive(true);
-      //       //fillUpBar.transform.position = fillUpBar.transform.position - scale;
+      //       fillUpBar.SetActive(true);
+      //       fillUpBar.transform.position = fillUpBar.transform.position - scale;
       //    }
       // }
    }
+}
 

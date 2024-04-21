@@ -9,7 +9,10 @@ using UnityEngine;
 public class plantSeed : MonoBehaviour
 {
    public GameObject seed;
+   public GameObject waterBar;
+   
    public Vector3 offset;
+   public Vector3 scale;
 
    public float distance;
    private string planted = "planted";
@@ -19,12 +22,22 @@ public class plantSeed : MonoBehaviour
    private void Update()
    {
       raycastSeed();
+
+      if (Input.GetMouseButton(1))
+      {
+         OnMouseDrag();
+      }
+      else if (Input.GetMouseButton(0) && seed.CompareTag("planted"))
+      {
+         OnMouseDown();
+      }
    }
 
    private void OnMouseDrag()
-   {
-      seed.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - offset);
-   }
+      {
+         seed.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - offset);
+      }
+   
 
    private void raycastSeed()
    {
@@ -45,6 +58,12 @@ public class plantSeed : MonoBehaviour
             textComp.text = planted;
          }
       }
+   }
+
+   private void OnMouseDown()
+   {
+      waterBar.SetActive(true);
+      waterBar.transform.localScale = waterBar.transform.localScale + scale;
    }
 }
 
