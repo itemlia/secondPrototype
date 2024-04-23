@@ -28,7 +28,7 @@ public class cutPlants : MonoBehaviour
     private void rayCastChop()
     {
         RaycastHit2D raycast = Physics2D.Raycast(gameObject.transform.position, Vector2.down, distance);
-
+        
         if (raycast.transform != null)
         {
             if (raycast.transform.CompareTag("planted"))
@@ -45,6 +45,7 @@ public class cutPlants : MonoBehaviour
 
     private void OnMouseDown()
     {
+        //RaycastHit2D raycast2 = Physics2D.queriesHitTriggers(true);
         seed.transform.DetachChildren();
         
     }
