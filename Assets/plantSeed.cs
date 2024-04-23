@@ -10,7 +10,7 @@ public class plantSeed : MonoBehaviour
 {
    public GameObject seed;
    public GameObject waterBar;
-   
+
    public Vector3 offset;
    public Vector3 scale;
 
@@ -18,7 +18,7 @@ public class plantSeed : MonoBehaviour
    private string planted = "planted";
 
    public TextMeshProUGUI textComp;
-  
+
    private void Update()
    {
       raycastSeed();
@@ -31,18 +31,16 @@ public class plantSeed : MonoBehaviour
       {
          OnMouseDown();
       }
-   }
 
-   private void OnMouseDrag()
+      if (waterBar.transform.localScale.x >= 0.44)
       {
-         seed.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - offset);
+         scale.x = 0;
       }
-   
-
+   }
    private void raycastSeed()
    {
       Debug.DrawRay(seed.transform.position, Vector2.down * distance, Color.black);
-      
+
       RaycastHit2D down = Physics2D.Raycast(seed.transform.position, Vector2.down, distance);
       RaycastHit2D up = Physics2D.Raycast(seed.transform.position, Vector2.up, distance);
       RaycastHit2D left = Physics2D.Raycast(seed.transform.position, Vector2.left, distance);
@@ -59,11 +57,16 @@ public class plantSeed : MonoBehaviour
          }
       }
    }
+   private void OnMouseDrag()
+   {
+      seed.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - offset);
+   }
 
    private void OnMouseDown()
    {
       waterBar.SetActive(true);
-      waterBar.transform.localScale = waterBar.transform.localScale + scale;
+      waterBar.transform.localScale += scale;
    }
 }
+
 

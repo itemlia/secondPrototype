@@ -308,8 +308,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625123102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4982, y: 0, z: 0}
-  m_LocalScale: {x: 0.378, y: 0.33040428, z: 1}
+  m_LocalPosition: {x: -0.49673, y: 0, z: 0}
+  m_LocalScale: {x: 0.01407294, y: 0.33040428, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1124835301}
@@ -703,7 +703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1255457360
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -900,7 +900,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seed: {fileID: 1817158028}
+  waterBar: {fileID: 625123102}
   offset: {x: 0, y: 0, z: -1}
+  scale: {x: 0.02, y: 0, z: 0}
   distance: 1
   textComp: {fileID: 1850405471}
 --- !u!212 &1817158031
