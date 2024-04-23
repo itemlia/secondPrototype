@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - planted
+  - chop
   layers:
   - Default
   - TransparentFX

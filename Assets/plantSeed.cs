@@ -5,11 +5,12 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class plantSeed : MonoBehaviour
 {
-   public GameObject seed;
    public GameObject waterBar;
+   public GameObject stem;
 
    public Vector3 offset;
    public Vector3 scale;
@@ -27,7 +28,7 @@ public class plantSeed : MonoBehaviour
       {
          OnMouseDrag();
       }
-      else if (Input.GetMouseButton(0) && seed.CompareTag("planted"))
+      else if (Input.GetMouseButtonDown(0) && gameObject.CompareTag("planted"))
       {
          OnMouseDown();
       }
@@ -35,31 +36,30 @@ public class plantSeed : MonoBehaviour
       if (waterBar.transform.localScale.x >= 0.44)
       {
          scale.x = 0;
+         gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+         stem.SetActive(true);
       }
    }
    private void raycastSeed()
    {
-      Debug.DrawRay(seed.transform.position, Vector2.down * distance, Color.black);
-
-      RaycastHit2D down = Physics2D.Raycast(seed.transform.position, Vector2.down, distance);
-      RaycastHit2D up = Physics2D.Raycast(seed.transform.position, Vector2.up, distance);
-      RaycastHit2D left = Physics2D.Raycast(seed.transform.position, Vector2.left, distance);
-      RaycastHit2D right = Physics2D.Raycast(seed.transform.position, Vector2.right, distance);
+      RaycastHit2D down = Physics2D.Raycast(gameObject.transform.position, Vector2.down, distance);
+      RaycastHit2D up = Physics2D.Raycast(gameObject.transform.position, Vector2.up, distance);
+      RaycastHit2D left = Physics2D.Raycast(gameObject.transform.position, Vector2.left, distance);
+      RaycastHit2D right = Physics2D.Raycast(gameObject.transform.position, Vector2.right, distance);
 
       if (up.transform != null && down.transform != null && left.transform != null && right.transform != null)
       {
          if (up.transform.CompareTag("ground") || down.transform.CompareTag("ground") ||
              left.transform.CompareTag("ground") || right.transform.CompareTag("ground"))
          {
-            seed.tag = "planted";
-            Debug.Log("planted");
+            gameObject.tag = "planted";
             textComp.text = planted;
          }
       }
    }
    private void OnMouseDrag()
    {
-      seed.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - offset);
+      gameObject.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - offset);
    }
 
    private void OnMouseDown()
