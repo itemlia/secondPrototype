@@ -10,6 +10,7 @@ public class plantSeed : MonoBehaviour
    public GameObject stem;
    public GameObject trimPlant;
    public GameObject barBackgrnd;
+   public GameObject emptyCanvas;
    
    public Vector3 offset;
    public Vector3 scale;
@@ -22,6 +23,7 @@ public class plantSeed : MonoBehaviour
    private void Update()
    {
       raycastSeed();
+      waterSeed();
 
       if (Input.GetMouseButton(1))
       {
@@ -31,14 +33,7 @@ public class plantSeed : MonoBehaviour
       {
          OnMouseDown();
       }
-
-      if (waterBar.transform.localScale.x >= 0.44)
-      {
-         scale.x = 0;
-         gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-         stem.SetActive(true);
-         trimPlant.SetActive(true);
-      }
+      
    }
    private void raycastSeed()
    {
@@ -56,6 +51,18 @@ public class plantSeed : MonoBehaviour
             textComp.text = planted;
             barBackgrnd.SetActive(true);
          }
+      }
+   }
+
+   private void waterSeed()
+   {
+      if (waterBar.transform.localScale.x >= 0.44)
+      {
+         scale.x = 0;
+         gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+         stem.SetActive(true);
+         trimPlant.SetActive(true);
+         emptyCanvas.SetActive(true);
       }
    }
    private void OnMouseDrag()
