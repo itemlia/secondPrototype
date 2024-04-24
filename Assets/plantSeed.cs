@@ -1,17 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor;
+using UnityEngine.UI;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 public class plantSeed : MonoBehaviour
 {
    public GameObject waterBar;
    public GameObject stem;
-
+   public GameObject trimPlant;
+   public GameObject barBackgrnd;
+   
    public Vector3 offset;
    public Vector3 scale;
 
@@ -38,6 +37,7 @@ public class plantSeed : MonoBehaviour
          scale.x = 0;
          gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
          stem.SetActive(true);
+         trimPlant.SetActive(true);
       }
    }
    private void raycastSeed()
@@ -54,6 +54,7 @@ public class plantSeed : MonoBehaviour
          {
             gameObject.tag = "planted";
             textComp.text = planted;
+            barBackgrnd.SetActive(true);
          }
       }
    }
@@ -66,6 +67,7 @@ public class plantSeed : MonoBehaviour
    {
       waterBar.SetActive(true);
       waterBar.transform.localScale += scale;
+      
    }
 }
 
