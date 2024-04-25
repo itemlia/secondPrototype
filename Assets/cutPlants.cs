@@ -9,8 +9,9 @@ public class cutPlants : MonoBehaviour
     public List<int> buttonOrder;
     public List<int> clickedOrder;
 
-    [SerializeField]private bool listMatch = false;
-
+    public GameObject canvasEmpty;
+    
+    private bool listMatch = false;
     private int matchNum;
 
     private void Start()
@@ -49,9 +50,11 @@ public class cutPlants : MonoBehaviour
             listMatch = true;
         }
 
-        if (listMatch = true)
+        if (listMatch)
         {
             gameObject.transform.DetachChildren();
+            canvasEmpty.SetActive(false);
+            
         }
     }
 }

@@ -10,7 +10,6 @@ public class plantSeed : MonoBehaviour
    public GameObject stem;
    public GameObject trimPlant;
    public GameObject barBackgrnd;
-   public GameObject emptyCanvas;
    
    public Vector3 offset;
    public Vector3 scale;
@@ -62,7 +61,6 @@ public class plantSeed : MonoBehaviour
          gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
          stem.SetActive(true);
          trimPlant.SetActive(true);
-         emptyCanvas.SetActive(true);
       }
    }
    private void OnMouseDrag()
