@@ -14,6 +14,8 @@ public class plantSeed : MonoBehaviour
    public Vector3 offset;
    public Vector3 scale;
 
+   public Color color;
+   
    public float distance;
    private string planted = "planted";
 
@@ -58,7 +60,7 @@ public class plantSeed : MonoBehaviour
       if (waterBar.transform.localScale.x >= 0.44)
       {
          scale.x = 0;
-         gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+         gameObject.GetComponent<SpriteRenderer>().color = color;
          stem.SetActive(true);
          trimPlant.SetActive(true);
       }

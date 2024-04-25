@@ -7,6 +7,7 @@ TagManager:
   - ground
   - planted
   - chop
+  - inventory
   layers:
   - Default
   - TransparentFX

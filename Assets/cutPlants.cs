@@ -10,6 +10,7 @@ public class cutPlants : MonoBehaviour
     public List<int> clickedOrder;
 
     public GameObject canvasEmpty;
+    public GameObject slotOne;
     
     private bool listMatch = false;
     private int matchNum;
@@ -54,7 +55,8 @@ public class cutPlants : MonoBehaviour
         {
             gameObject.transform.DetachChildren();
             canvasEmpty.SetActive(false);
-            
+            gameObject.transform.position = slotOne.transform.position;
+
         }
     }
 }
