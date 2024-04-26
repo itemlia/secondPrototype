@@ -6,14 +6,14 @@ using UnityEngine;
 
 public class cutPlants : MonoBehaviour
 {
-    public List<int> buttonOrder;
-    public List<int> clickedOrder;
+    [SerializeField] private List<int> buttonOrder;
+    [SerializeField] public List<int> clickedOrder;
 
-    public GameObject canvasEmpty;
-    public GameObject slotOne;
+    [SerializeField] private GameObject canvasEmpty;
+    [SerializeField] private GameObject slotOne;
     
     private bool listMatch = false;
-    private int matchNum;
+    [SerializeField] private int matchNum;
 
     private void Start()
     { 

@@ -6,25 +6,25 @@ using UnityEngine;
 
 public class plantSeed : MonoBehaviour
 {
-   public GameObject waterBar;
-   public GameObject stem;
-   public GameObject trimPlant;
-   public GameObject barBackgrnd;
+   [SerializeField] private GameObject waterBar;
+   [SerializeField] private GameObject stem;
+   [SerializeField] private GameObject trimPlant;
+   [SerializeField] private GameObject barBackgrnd;
    
-   public Vector3 offset;
-   public Vector3 scale;
+   [SerializeField] private Vector3 offset;
+   [SerializeField] private Vector3 scale;
 
-   public Color color;
+   [SerializeField] private Color color;
    
-   public float distance;
+   [SerializeField] private float distance;
    private string planted = "planted";
 
-   public TextMeshProUGUI textComp;
+   [SerializeField]public TextMeshProUGUI textComp;
 
    private void Update()
    {
-      raycastSeed();
-      waterSeed();
+      RaycastSeed();
+      WaterSeed();
 
       if (Input.GetMouseButton(1))
       {
@@ -36,7 +36,7 @@ public class plantSeed : MonoBehaviour
       }
       
    }
-   private void raycastSeed()
+   private void RaycastSeed()
    {
       RaycastHit2D down = Physics2D.Raycast(gameObject.transform.position, Vector2.down, distance);
       RaycastHit2D up = Physics2D.Raycast(gameObject.transform.position, Vector2.up, distance);
@@ -55,7 +55,7 @@ public class plantSeed : MonoBehaviour
       }
    }
 
-   private void waterSeed()
+   private void WaterSeed()
    {
       if (waterBar.transform.localScale.x >= 0.44)
       {

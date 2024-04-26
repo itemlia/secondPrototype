@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class showButtons : MonoBehaviour
 {
-    public GameObject emptyCanvasGO;
+    [SerializeField]private GameObject emptyCanvasGO;
 
     public void OnMouseDown()
     {

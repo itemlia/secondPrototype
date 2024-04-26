@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class clickingOrder : MonoBehaviour
 {
-    public int buttonNumber;
+    [SerializeField] private int buttonNumber;
 
-    public cutPlants _cutPlants;
+    [SerializeField] private cutPlants _cutPlants;
     
     
     public void OnMouseDown()
