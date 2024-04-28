@@ -26,11 +26,7 @@ public class plantSeed : MonoBehaviour
       RaycastSeed();
       WaterSeed();
 
-      if (Input.GetMouseButton(1))
-      {
-         OnMouseDrag();
-      }
-      else if (Input.GetMouseButtonDown(0) && gameObject.CompareTag("planted"))
+     if (Input.GetMouseButtonDown(0) && gameObject.CompareTag("planted"))
       {
          OnMouseDown();
       }

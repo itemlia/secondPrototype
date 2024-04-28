@@ -11,6 +11,7 @@ public class cutPlants : MonoBehaviour
 
     [SerializeField] private GameObject canvasEmpty;
     [SerializeField] private GameObject slotOne;
+    [SerializeField] private GameObject seed;
     
     private bool listMatch = false;
     [SerializeField] private int matchNum;
@@ -53,9 +54,9 @@ public class cutPlants : MonoBehaviour
 
         if (listMatch)
         {
-            gameObject.transform.DetachChildren();
+            seed.transform.DetachChildren();
             canvasEmpty.SetActive(false);
-            gameObject.transform.position = slotOne.transform.position;
+            seed.transform.position = slotOne.transform.position;
 
         }
     }

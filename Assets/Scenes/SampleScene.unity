@@ -210,7 +210,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 10249322}
         m_TargetAssemblyTypeName: showButtons, Assembly-CSharp
-        m_MethodName: OnMouseDown
+        m_MethodName: buttonsActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptyCanvasGO: {fileID: 594724441}
+  click: {fileID: 10249319}
 --- !u!1 &84686430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,6 +1847,7 @@ MonoBehaviour:
   clickedOrder: 
   canvasEmpty: {fileID: 594724441}
   slotOne: {fileID: 1385544704}
+  seed: {fileID: 1001320160}
   matchNum: 0
 --- !u!114 &1001320162
 MonoBehaviour:
@@ -2102,6 +2104,7 @@ MonoBehaviour:
   clickedOrder: 
   canvasEmpty: {fileID: 594724441}
   slotOne: {fileID: 1046851202}
+  seed: {fileID: 1053618805}
   matchNum: 0
 --- !u!114 &1053618807
 MonoBehaviour:
@@ -2713,6 +2716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptyCanvasGO: {fileID: 594724441}
+  click: {fileID: 1206869094}
 --- !u!114 &1206869094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2759,7 +2763,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1206869093}
         m_TargetAssemblyTypeName: showButtons, Assembly-CSharp
-        m_MethodName: OnMouseDown
+        m_MethodName: buttonsActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3381,7 +3385,7 @@ GameObject:
   - component: {fileID: 1443227099}
   - component: {fileID: 1443227098}
   - component: {fileID: 1443227097}
-  - component: {fileID: 1443227096}
+  - component: {fileID: 1443227100}
   m_Layer: 0
   m_Name: cut plants
   m_TagString: Untagged
@@ -3410,19 +3414,6 @@ RectTransform:
   m_AnchoredPosition: {x: 3.099944, y: -50.99958}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1443227096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443227094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3ebc209084deda4190a7a8eab4bfd23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  emptyCanvasGO: {fileID: 594724441}
 --- !u!114 &1443227097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3467,9 +3458,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1443227096}
+      - m_Target: {fileID: 1443227100}
         m_TargetAssemblyTypeName: showButtons, Assembly-CSharp
-        m_MethodName: OnMouseDown
+        m_MethodName: buttonsActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3517,6 +3508,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443227094}
   m_CullTransparentMesh: 1
+--- !u!114 &1443227100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443227094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ebc209084deda4190a7a8eab4bfd23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptyCanvasGO: {fileID: 594724441}
+  click: {fileID: 1443227097}
 --- !u!1 &1569028108
 GameObject:
   m_ObjectHideFlags: 0
@@ -4340,6 +4345,7 @@ MonoBehaviour:
   clickedOrder: 
   canvasEmpty: {fileID: 594724441}
   slotOne: {fileID: 1083631366}
+  seed: {fileID: 1817158028}
   matchNum: 0
 --- !u!1 &1824885516
 GameObject:
