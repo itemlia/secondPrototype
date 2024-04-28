@@ -8,22 +8,13 @@ public class cutPlants : MonoBehaviour
 {
     [SerializeField] private List<int> buttonOrder;
     [SerializeField] public List<int> clickedOrder;
-
-    [SerializeField] private GameObject canvasEmpty;
+    
     [SerializeField] private GameObject slotOne;
     [SerializeField] private GameObject seed;
+    [SerializeField] private GameObject buttons;
     
-    private bool listMatch = false;
+    [SerializeField] private bool listMatch = false;
     [SerializeField] private int matchNum;
-
-    private void Start()
-    { 
-        buttonOrder.Add(1);
-        buttonOrder.Add(4);
-        buttonOrder.Add(2);
-        buttonOrder.Add(5);
-        buttonOrder.Add(3);
-    }
 
     private void Update()
     {
@@ -33,7 +24,7 @@ public class cutPlants : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < buttonOrder.Count; i++)
+            for (int i = 0; i < 5; i++)
             {
                 if (buttonOrder[i] == clickedOrder[i])
                 {
@@ -41,13 +32,12 @@ public class cutPlants : MonoBehaviour
                 }
                 else
                 {
-                    listMatch = false;
-                    break;
+                    clickedOrder.Remove(i);
                 }
             }
         }
 
-        if (matchNum == 5)
+        if (matchNum >= 5)
         {
             listMatch = true;
         }
@@ -55,8 +45,8 @@ public class cutPlants : MonoBehaviour
         if (listMatch)
         {
             seed.transform.DetachChildren();
-            canvasEmpty.SetActive(false);
             seed.transform.position = slotOne.transform.position;
+            buttons.SetActive(false);
 
         }
     }

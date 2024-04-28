@@ -19,16 +19,23 @@ public class plantSeed : MonoBehaviour
    [SerializeField] private float distance;
    private string planted = "planted";
 
-   [SerializeField]public TextMeshProUGUI textComp;
+   [SerializeField] public TextMeshProUGUI textComp;
+   
+   [SerializeField] private Button click;
+
+   public void Start()
+   {
+      var btn = click.GetComponent<Button>();
+      btn.onClick.AddListener(WaterSeed);
+   }
 
    private void Update()
    {
       RaycastSeed();
-      WaterSeed();
 
      if (Input.GetMouseButtonDown(0) && gameObject.CompareTag("planted"))
       {
-         OnMouseDown();
+         WaterSeed();
       }
       
    }
@@ -51,8 +58,11 @@ public class plantSeed : MonoBehaviour
       }
    }
 
-   private void WaterSeed()
+   public void WaterSeed()
    {
+      waterBar.SetActive(true);
+      waterBar.transform.localScale += scale;
+      
       if (waterBar.transform.localScale.x >= 0.44)
       {
          scale.x = 0;
@@ -66,12 +76,7 @@ public class plantSeed : MonoBehaviour
       gameObject.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - offset);
    }
 
-   private void OnMouseDown()
-   {
-      waterBar.SetActive(true);
-      waterBar.transform.localScale += scale;
-      
-   }
+   
 }
 
 
