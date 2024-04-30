@@ -12,6 +12,7 @@ public class cutPlants : MonoBehaviour
     [SerializeField] private GameObject slotOne;
     [SerializeField] private GameObject seed;
     [SerializeField] private GameObject buttons;
+    [SerializeField] private GameObject sellButton;
     
     [SerializeField] private bool listMatch = false;
     [SerializeField] public int matchNum;
@@ -26,23 +27,12 @@ public class cutPlants : MonoBehaviour
         {
             listMatch = true;
         }
-            // for (int i = 0; i < 5; i++)
-            // {
-            //     if (buttonOrder[i] == clickedOrder[i])
-            //     {
-            //         matchNum++;
-            //     }
-            //     else
-            //     {
-            //         clickedOrder.Remove(i);
-            //     }
-            // }
-        
         if (listMatch)
         {
             seed.transform.DetachChildren();
             seed.transform.position = slotOne.transform.position;
             buttons.SetActive(false);
+            sellButton.SetActive(true);
 
         }
     }
