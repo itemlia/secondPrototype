@@ -10,10 +10,15 @@ public class clickingOrder : MonoBehaviour
     [SerializeField] private int buttonNumber;
 
     [SerializeField] private cutPlants _cutPlants;
-    
+    [SerializeField] private int index;
     
     public void OnMouseDown()
     {
-        _cutPlants.clickedOrder.Add(buttonNumber);
+        if (_cutPlants.buttonOrder[_cutPlants.clickedOrder.Count] == buttonNumber)
+        {
+            _cutPlants.clickedOrder.Add(buttonNumber);
+            _cutPlants.matchNum++;
+        }
+
     }
 }

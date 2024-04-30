@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class cutPlants : MonoBehaviour
 {
-    [SerializeField] private List<int> buttonOrder;
+    [SerializeField] public List<int> buttonOrder;
     [SerializeField] public List<int> clickedOrder;
     
     [SerializeField] private GameObject slotOne;
@@ -14,7 +14,7 @@ public class cutPlants : MonoBehaviour
     [SerializeField] private GameObject buttons;
     
     [SerializeField] private bool listMatch = false;
-    [SerializeField] private int matchNum;
+    [SerializeField] public int matchNum;
 
     private void Update()
     {
@@ -22,26 +22,22 @@ public class cutPlants : MonoBehaviour
         {
             listMatch = false;
         }
-        else
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                if (buttonOrder[i] == clickedOrder[i])
-                {
-                    matchNum++;
-                }
-                else
-                {
-                    clickedOrder.Remove(i);
-                }
-            }
-        }
-
-        if (matchNum >= 5)
+        else  if (matchNum >= 5)
         {
             listMatch = true;
         }
-
+            // for (int i = 0; i < 5; i++)
+            // {
+            //     if (buttonOrder[i] == clickedOrder[i])
+            //     {
+            //         matchNum++;
+            //     }
+            //     else
+            //     {
+            //         clickedOrder.Remove(i);
+            //     }
+            // }
+        
         if (listMatch)
         {
             seed.transform.DetachChildren();
