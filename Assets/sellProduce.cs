@@ -11,11 +11,12 @@ public class sellProduce : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textComp;
 
     [SerializeField] private string sellingPrice;
-    public Image backgroundImage;
+    
+    [SerializeField] private GameObject backgroundImage;
     
     public void OnMouseDown()
     {
-        backgroundImage.enabled = true;
+        backgroundImage.SetActive(true);
         textComp.text = sellingPrice;
     }
 }
