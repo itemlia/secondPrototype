@@ -2015,7 +2015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: sell
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3232,7 +3232,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: sell
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3716,7 +3716,7 @@ MonoBehaviour:
   slotOne: {fileID: 1385544704}
   seed: {fileID: 1001320160}
   buttons: {fileID: 279325970}
-  sellButton: {fileID: 0}
+  sellButton: {fileID: 198365459}
   listMatch: 0
   matchNum: 0
 --- !u!114 &1001320162
@@ -4183,7 +4183,7 @@ MonoBehaviour:
   slotOne: {fileID: 1046851202}
   seed: {fileID: 1053618805}
   buttons: {fileID: 339141684}
-  sellButton: {fileID: 0}
+  sellButton: {fileID: 1821972655}
   listMatch: 0
   matchNum: 0
 --- !u!114 &1053618807
@@ -6904,7 +6904,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: sell
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
