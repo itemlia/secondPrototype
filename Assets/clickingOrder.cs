@@ -17,6 +17,11 @@ public class clickingOrder : MonoBehaviour
         if (_cutPlants.buttonOrder[_cutPlants.clickedOrder.Count] == buttonNumber)
         {
             _cutPlants.clickedOrder.Add(buttonNumber);
+            ColorBlock myColor = gameObject.GetComponent<Button>().colors;
+
+            myColor.normalColor = Color.green;
+
+            gameObject.GetComponent<Button>().colors = myColor;
             _cutPlants.matchNum++;
         }
 
