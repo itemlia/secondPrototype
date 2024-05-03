@@ -48,7 +48,7 @@ public class inputPrice : MonoBehaviour
         }
         else if (playerAnswer == "no")
         {
-           hagglePrice();
+           StartCoroutine(hagglePrice());
         }
         else
         {
@@ -57,12 +57,12 @@ public class inputPrice : MonoBehaviour
 
     }
 
-    private void hagglePrice()
+    IEnumerator hagglePrice()
     {
+        _sellProduce.textComp.text = "please enter your asking price";
         inputField.Select();
         inputField.text = "";
-        _sellProduce.textComp.text = "please enter your asking price";
-            
+        yield return new WaitForSeconds(5);
         int numPrice = int.Parse(playerAnswer);
             
         if (numPrice <= numPrice - randomNum)
@@ -70,6 +70,7 @@ public class inputPrice : MonoBehaviour
             _sellProduce.textComp.text = "accepted";
             money += numPrice;
             moneyCounter.text = money.ToString();
+            _sellProduce.textComp.text = "";
         }
         else
         {
