@@ -12,7 +12,8 @@ public class sellProduce : MonoBehaviour
 
     [SerializeField] private string sellingPrice;
 
-    [SerializeField] private GameObject backgroundImage;
+    public GameObject backgroundImage;
+    
     [SerializeField] private GameObject inputField;
 
     public int price;

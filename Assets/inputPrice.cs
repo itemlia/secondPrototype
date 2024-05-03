@@ -45,6 +45,11 @@ public class inputPrice : MonoBehaviour
             money += _sellProduce.price;
             _sellProduce.textComp.text = "thank you";
             moneyCounter.text = money.ToString();
+            _sellProduce.textComp.text = "";
+            inputField.Select();
+            inputField.text = "";
+            _sellProduce.backgroundImage.SetActive(false);
+            gameObject.SetActive(false);
         }
         else if (playerAnswer == "no")
         {
@@ -71,10 +76,19 @@ public class inputPrice : MonoBehaviour
             money += numPrice;
             moneyCounter.text = money.ToString();
             _sellProduce.textComp.text = "";
+            inputField.Select();
+            inputField.text = "";
+            _sellProduce.backgroundImage.SetActive(false);
+            gameObject.SetActive(false);
         }
         else
         {
             _sellProduce.textComp.text = "denied, i will no longer buy";
+            _sellProduce.textComp.text = "";
+            inputField.Select();
+            inputField.text = "";
+            _sellProduce.backgroundImage.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }
