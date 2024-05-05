@@ -949,10 +949,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComp: {fileID: 1516909004}
-  sellingPrice: i will take these for 5
   backgroundImage: {fileID: 339695312}
-  inputField: {fileID: 1666944542}
   price: 0
+  clicked: 0
+  inputField: {fileID: 1666944542}
+  sellingPrice: i will take these for 5
 --- !u!114 &198365462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5012,10 +5013,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComp: {fileID: 1516909004}
-  sellingPrice: i will take these for 10
   backgroundImage: {fileID: 339695312}
-  inputField: {fileID: 1666944542}
   price: 10
+  clicked: 0
+  inputField: {fileID: 1666944542}
+  sellingPrice: i will take these for 10
 --- !u!114 &1146146107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7869,7 +7871,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1666944547}
         m_TargetAssemblyTypeName: inputPrice, Assembly-CSharp
-        m_MethodName: setPrice
+        m_MethodName: getSeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7965,12 +7967,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee9ea498e06c4ae478b1aa7cd908a027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sellProduce: {fileID: 1146146106}
+  _sellProduce1: {fileID: 1146146106}
+  _sellProduce2: {fileID: 198365461}
+  _sellProduce3: {fileID: 1821972657}
   inputField: {fileID: 1666944544}
   moneyCounter: {fileID: 2106301724}
   playerAnswer: 
   money: 0
   randomNum: 0
+  sellOne: {fileID: 1146146107}
+  sellTwo: {fileID: 198365462}
+  sellThree: {fileID: 1821972658}
 --- !u!1 &1682969718
 GameObject:
   m_ObjectHideFlags: 0
@@ -8749,10 +8756,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComp: {fileID: 1516909004}
-  sellingPrice: i will take these for 15
   backgroundImage: {fileID: 339695312}
-  inputField: {fileID: 1666944542}
   price: 0
+  clicked: 0
+  inputField: {fileID: 1666944542}
+  sellingPrice: i will take these for 15
 --- !u!114 &1821972658
 MonoBehaviour:
   m_ObjectHideFlags: 0

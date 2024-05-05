@@ -9,19 +9,18 @@ using Image = UnityEngine.UI.Image;
 public class sellProduce : MonoBehaviour
 {
     public TextMeshProUGUI textComp;
-
-    [SerializeField] private string sellingPrice;
-
     public GameObject backgroundImage;
+    public int price;
+    public bool clicked;
     
     [SerializeField] private GameObject inputField;
-
-    public int price;
+    [SerializeField] private string sellingPrice;
 
     public void OnMouseDown()
     {
         backgroundImage.SetActive(true);
         inputField.SetActive(true);
         textComp.text = sellingPrice;
+        clicked = true;
     }
 }
