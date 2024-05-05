@@ -39,7 +39,7 @@ public class plantSeed : MonoBehaviour
       }
       
    }
-   private void RaycastSeed()
+   private void RaycastSeed() //checks if seed has reached the 'ground' and if so it can be 'planted'
    {
       RaycastHit2D down = Physics2D.Raycast(gameObject.transform.position, Vector2.down, distance);
       RaycastHit2D up = Physics2D.Raycast(gameObject.transform.position, Vector2.up, distance);
@@ -58,20 +58,20 @@ public class plantSeed : MonoBehaviour
       }
    }
 
-   public void WaterSeed()
+   public void WaterSeed() //allows player to water seed by clikin on the plant
    {
       waterBar.SetActive(true);
       waterBar.transform.localScale += scale;
       
-      if (waterBar.transform.localScale.x >= 0.44)
+      if (waterBar.transform.localScale.x >= 0.44) //increases a bar to show progress of watering and when reached the end plant is watered
       {
-         scale.x = 0;
+         scale.x = 0; 
          gameObject.GetComponent<SpriteRenderer>().color = color;
          stem.SetActive(true);
          trimPlant.SetActive(true);
       }
    }
-   private void OnMouseDrag()
+   private void OnMouseDrag() //allows for seed to be dragged around screen
    {
       gameObject.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - offset);
    }

@@ -19,15 +19,15 @@ public class cutPlants : MonoBehaviour
 
     private void Update()
     {
-        if (buttonOrder.Count != clickedOrder.Count)
+        if (buttonOrder.Count != clickedOrder.Count) //compares the two lists to see if theyre the same
         {
             listMatch = false;
         }
         else  if (matchNum >= 5)
         {
-            listMatch = true;
+            listMatch = true; //if all five numbers are correct then the lists are matched
         }
-        if (listMatch)
+        if (listMatch) //if lists are matched then seed is 'harvested'
         {
             seed.transform.DetachChildren();
             seed.transform.position = slotOne.transform.position;

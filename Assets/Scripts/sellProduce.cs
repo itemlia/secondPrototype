@@ -23,6 +23,6 @@ public class sellProduce : MonoBehaviour
         inputField.SetActive(true);
         textComp.text = sellingPrice;
         clicked = true;
-        _inputPrice.getSeed();
+        _inputPrice.getSeed(); //calls function to sell produce
     }
 }

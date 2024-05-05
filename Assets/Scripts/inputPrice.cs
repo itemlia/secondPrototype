@@ -29,32 +29,33 @@ public class inputPrice : MonoBehaviour
 
     private void Start()
     {
-        randomNum = Random.Range(0, 6);
-        //getSeed();
+        randomNum = Random.Range(0, 6); //generates random number
     }
 
    
-    public void getSeed()
+    public void getSeed() //checks which seed is being sold
     {
         if (_sellProduce1.clicked)
         {
-            setPrice(_sellProduce1);
+            StartCoroutine(setPrice(_sellProduce1));
         }
         else if (_sellProduce2.clicked)
         {
-            setPrice(_sellProduce2);
+            StartCoroutine(setPrice(_sellProduce2));
         } 
         else if (_sellProduce3.clicked)
         {
-            setPrice(_sellProduce3);
+            StartCoroutine(setPrice(_sellProduce3));
         }
     }
     
-    private void setPrice(sellProduce sellProduce)
+    IEnumerator setPrice(sellProduce sellProduce) 
     {
         playerAnswer = inputField.text;
+
+        yield return new WaitForSeconds(3);
         
-        if (playerAnswer == "yes")
+        if (playerAnswer == "yes") //if player agrees with price sell seed and give them the money
         {
             money += sellProduce.price;
             sellProduce.textComp.text = "thank you";
@@ -65,7 +66,7 @@ public class inputPrice : MonoBehaviour
             sellProduce.backgroundImage.SetActive(false);
             gameObject.SetActive(false);
         }
-        else if (playerAnswer == "no")
+        else if (playerAnswer == "no") //if they dont agree then they can 'haggle'
         {
            StartCoroutine(hagglePrice(sellProduce));
         }
@@ -78,13 +79,13 @@ public class inputPrice : MonoBehaviour
 
     IEnumerator hagglePrice(sellProduce sellProduce)
     {
-        sellProduce.textComp.text = "please enter your asking price";
+        sellProduce.textComp.text = "please enter your asking price"; //allows player to pick price
         inputField.Select();
-        inputField.text = "";
+        //inputField.text = "";
         yield return new WaitForSeconds(5);
-        int numPrice = int.Parse(playerAnswer);
+        int numPrice = int.Parse(playerAnswer); //turns  string into int
             
-        if (numPrice <= numPrice - randomNum)
+        if (numPrice <= numPrice - randomNum) //checks that number isnt too big by checking it against their price - a random value
         {
             sellProduce.textComp.text = "accepted";
             money += numPrice;
@@ -95,7 +96,7 @@ public class inputPrice : MonoBehaviour
             sellProduce.backgroundImage.SetActive(false);
             gameObject.SetActive(false);
         }
-        else
+        else //if number suggested is too big their plant wont be bought
         {
             sellProduce.textComp.text = "denied, i will no longer buy";
             sellProduce.textComp.text = "";

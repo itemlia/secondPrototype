@@ -14,15 +14,15 @@ public class clickingOrder : MonoBehaviour
     
     public void OnMouseDown()
     {
-        if (_cutPlants.buttonOrder[_cutPlants.clickedOrder.Count] == buttonNumber)
+        if (_cutPlants.buttonOrder[_cutPlants.clickedOrder.Count] == buttonNumber) //checks individual list values when clicked
         {
-            _cutPlants.clickedOrder.Add(buttonNumber);
+            _cutPlants.clickedOrder.Add(buttonNumber); //if value is right then added to list and button is turnt green
             ColorBlock myColor = gameObject.GetComponent<Button>().colors;
 
             myColor.normalColor = Color.green;
 
             gameObject.GetComponent<Button>().colors = myColor;
-            _cutPlants.matchNum++;
+            _cutPlants.matchNum++; //match number increases to show a match has been made
         }
 
     }
