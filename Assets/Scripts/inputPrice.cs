@@ -26,24 +26,11 @@ public class inputPrice : MonoBehaviour
     [SerializeField] private Button sellOne;
     [SerializeField] private Button sellTwo;
     [SerializeField] private Button sellThree;
-    
-    // private void Awake()
-    // {
-    //     if (price == null)
-    //     {
-    //         price = this;
-    //     }
-    //     else
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
-    
 
     private void Start()
     {
         randomNum = Random.Range(0, 6);
-        getSeed();
+        //getSeed();
     }
 
    
@@ -63,35 +50,35 @@ public class inputPrice : MonoBehaviour
         }
     }
     
-    private void setPrice(sellProduce _sellProduce)
+    private void setPrice(sellProduce sellProduce)
     {
         playerAnswer = inputField.text;
         
         if (playerAnswer == "yes")
         {
-            money += _sellProduce.price;
-            _sellProduce.textComp.text = "thank you";
+            money += sellProduce.price;
+            sellProduce.textComp.text = "thank you";
             moneyCounter.text = money.ToString();
-            _sellProduce.textComp.text = "";
+            sellProduce.textComp.text = "";
             inputField.Select();
             inputField.text = "";
-            _sellProduce.backgroundImage.SetActive(false);
+            sellProduce.backgroundImage.SetActive(false);
             gameObject.SetActive(false);
         }
         else if (playerAnswer == "no")
         {
-           StartCoroutine(hagglePrice(_sellProduce));
+           StartCoroutine(hagglePrice(sellProduce));
         }
         else
         {
-            _sellProduce.textComp.text = "error, please retype answer";
+            sellProduce.textComp.text = "error, please retype answer";
         }
 
     }
 
-    IEnumerator hagglePrice(sellProduce _sellProduce)
+    IEnumerator hagglePrice(sellProduce sellProduce)
     {
-        _sellProduce.textComp.text = "please enter your asking price";
+        sellProduce.textComp.text = "please enter your asking price";
         inputField.Select();
         inputField.text = "";
         yield return new WaitForSeconds(5);
@@ -99,22 +86,22 @@ public class inputPrice : MonoBehaviour
             
         if (numPrice <= numPrice - randomNum)
         {
-            _sellProduce.textComp.text = "accepted";
+            sellProduce.textComp.text = "accepted";
             money += numPrice;
             moneyCounter.text = money.ToString();
-            _sellProduce.textComp.text = "";
+            sellProduce.textComp.text = "";
             inputField.Select();
             inputField.text = "";
-            _sellProduce.backgroundImage.SetActive(false);
+            sellProduce.backgroundImage.SetActive(false);
             gameObject.SetActive(false);
         }
         else
         {
-            _sellProduce.textComp.text = "denied, i will no longer buy";
-            _sellProduce.textComp.text = "";
+            sellProduce.textComp.text = "denied, i will no longer buy";
+            sellProduce.textComp.text = "";
             inputField.Select();
             inputField.text = "";
-            _sellProduce.backgroundImage.SetActive(false);
+            sellProduce.backgroundImage.SetActive(false);
             gameObject.SetActive(false);
         }
     }

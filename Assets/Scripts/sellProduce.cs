@@ -15,6 +15,7 @@ public class sellProduce : MonoBehaviour
     
     [SerializeField] private GameObject inputField;
     [SerializeField] private string sellingPrice;
+    [SerializeField] private inputPrice _inputPrice;
 
     public void OnMouseDown()
     {
@@ -22,5 +23,6 @@ public class sellProduce : MonoBehaviour
         inputField.SetActive(true);
         textComp.text = sellingPrice;
         clicked = true;
+        _inputPrice.getSeed();
     }
 }
