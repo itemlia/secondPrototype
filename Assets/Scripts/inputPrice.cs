@@ -23,6 +23,7 @@ public class inputPrice : MonoBehaviour
     [SerializeField] private string playerAnswer;
     [SerializeField] private int money;
     [SerializeField] private int randomNum;
+    [SerializeField] private int bigRandomNum;
     
     [SerializeField] private Button sellOne;
     [SerializeField] private Button sellTwo;
@@ -31,6 +32,7 @@ public class inputPrice : MonoBehaviour
     private void Start()
     {
         randomNum = Random.Range(0, 6); //generates random number
+        bigRandomNum = Random.Range(10, 15);
     }
 
    
@@ -81,12 +83,12 @@ public class inputPrice : MonoBehaviour
     IEnumerator hagglePrice(sellProduce sellProduce)
     {
         sellProduce.textComp.text = "please enter your asking price"; //allows player to pick price
-        //inputField.Select();
-        //inputField.text = "";
-        yield return new WaitForSeconds(3);
-        int numPrice = int.Parse(playerAnswer); //turns  string into int
+        yield return new WaitForSeconds(7);
+        int numPrice; 
+        
+        int.TryParse(playerAnswer, out numPrice); //turns string into int
             
-        if (numPrice <= numPrice - randomNum) //checks that number isnt too big by checking it against their price - a random value
+        if ((numPrice + randomNum) < bigRandomNum) //checks that number isnt too big by checking it against their price - a random value
         {
             sellProduce.textComp.text = "accepted";
             money += numPrice;
