@@ -10,12 +10,13 @@ using Random = UnityEngine.Random;
 
 public class inputPrice : MonoBehaviour
 {
-    public static inputPrice price;
 
     public sellProduce _sellProduce1;
     public sellProduce _sellProduce2;
     public sellProduce _sellProduce3;
 
+    private bool condition;
+    
     [SerializeField] private TMP_InputField inputField;
     [SerializeField] private TextMeshProUGUI moneyCounter;
 
@@ -48,41 +49,41 @@ public class inputPrice : MonoBehaviour
             StartCoroutine(setPrice(_sellProduce3));
         }
     }
-    
-    IEnumerator setPrice(sellProduce sellProduce) 
+    public IEnumerator setPrice(sellProduce sellProduce) 
     {
         playerAnswer = inputField.text;
 
         yield return new WaitForSeconds(3);
         
-        if (playerAnswer == "yes") //if player agrees with price sell seed and give them the money
-        {
-            money += sellProduce.price;
-            sellProduce.textComp.text = "thank you";
-            moneyCounter.text = money.ToString();
-            sellProduce.textComp.text = "";
-            inputField.Select();
-            inputField.text = "";
-            sellProduce.backgroundImage.SetActive(false);
-            gameObject.SetActive(false);
-        }
-        else if (playerAnswer == "no") //if they dont agree then they can 'haggle'
-        {
-           StartCoroutine(hagglePrice(sellProduce));
-        }
-        else
-        {
-            sellProduce.textComp.text = "error, please retype answer";
-        }
-
+            if (playerAnswer == "yes") //if player agrees with price sell seed and give them the money
+            {
+                money += sellProduce.price;
+                sellProduce.textComp.text = "thank you";
+                moneyCounter.text = money.ToString();
+                sellProduce.textComp.text = "";
+                inputField.Select();
+                inputField.text = "";
+                sellProduce.backgroundImage.SetActive(false);
+                gameObject.SetActive(false);
+            }
+            else if (playerAnswer == "no") //if they dont agree then they can 'haggle'
+            {
+                StartCoroutine(hagglePrice(sellProduce));
+            }
+            else
+            {
+                sellProduce.textComp.text = "error, please retype answer";
+                StartCoroutine(setPrice(sellProduce));
+            }
+        
     }
 
     IEnumerator hagglePrice(sellProduce sellProduce)
     {
         sellProduce.textComp.text = "please enter your asking price"; //allows player to pick price
-        inputField.Select();
+        //inputField.Select();
         //inputField.text = "";
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         int numPrice = int.Parse(playerAnswer); //turns  string into int
             
         if (numPrice <= numPrice - randomNum) //checks that number isnt too big by checking it against their price - a random value
