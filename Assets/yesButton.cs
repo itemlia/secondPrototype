@@ -6,43 +6,17 @@ using UnityEngine;
 
 public class yesButton : MonoBehaviour
 {
-    public sellProduce _sellProduce1;
-    public sellProduce _sellProduce2;
-    public sellProduce _sellProduce3;
-    
-    private int randomNum;
-    private int bigRandomNum;
-
-    [SerializeField] private TextMeshProUGUI moneyCounter;
-    [SerializeField] private int money;
-
-    private sellProduce currentSelling;
-
-    public void Update() //checks which seed is being sold
-    {
-        if (_sellProduce1.clicked)
-        {
-            currentSelling = _sellProduce1;
-        }
-        else if (_sellProduce2.clicked)
-        {
-            currentSelling = _sellProduce2;
-        }
-        else if (_sellProduce3.clicked)
-        {
-            currentSelling = _sellProduce3;
-        }
-    }
+    [SerializeField] private shopManager _shopManager;
 
     public void OnMouseDown()
     {
-        agreeAble(currentSelling);
+        agreeAble(_shopManager.currentSelling);
     }
 
     public void agreeAble(sellProduce sellProduce)
     {
-        money += sellProduce.price;
+        _shopManager.money += sellProduce.price;
         sellProduce.textComp.text = "thank you";
-        moneyCounter.text = money.ToString();
+        _shopManager.moneyCounter.text = _shopManager.money.ToString();
     }
 }
