@@ -13,6 +13,7 @@ public class sellProduce : MonoBehaviour
     public GameObject yesNO;
     public int price;
     public bool clicked;
+    public GameObject seed;
     
     [SerializeField] private string sellingPrice;
 

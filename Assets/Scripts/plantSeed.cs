@@ -14,7 +14,7 @@ public class plantSeed : MonoBehaviour
    [SerializeField] private Vector3 offset;
    [SerializeField] private Vector3 scale;
 
-   [SerializeField] private Color color;
+   [SerializeField] private Sprite sprite;
    
    [SerializeField] private float distance;
    private string planted = "planted";
@@ -48,6 +48,7 @@ public class plantSeed : MonoBehaviour
 
       if (up.transform != null && down.transform != null && left.transform != null && right.transform != null)
       {
+         Debug.DrawRay(gameObject.transform.position, Vector2.down, Color.black);
          if (up.transform.CompareTag("ground") || down.transform.CompareTag("ground") ||
              left.transform.CompareTag("ground") || right.transform.CompareTag("ground"))
          {
@@ -65,9 +66,8 @@ public class plantSeed : MonoBehaviour
       
       if (waterBar.transform.localScale.x >= 0.44) //increases a bar to show progress of watering and when reached the end plant is watered
       {
-         scale.x = 0; 
-         gameObject.GetComponent<SpriteRenderer>().color = color;
-         stem.SetActive(true);
+         scale.x = 0;
+         gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
          trimPlant.SetActive(true);
       }
    }

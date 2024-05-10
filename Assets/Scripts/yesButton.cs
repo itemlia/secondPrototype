@@ -18,5 +18,9 @@ public class yesButton : MonoBehaviour
         _shopManager.money += sellProduce.price;
         sellProduce.textComp.text = "thank you";
         _shopManager.moneyCounter.text = _shopManager.money.ToString();
+        sellProduce.clicked = false;
+        Destroy(sellProduce.seed);
+        sellProduce.gameObject.SetActive(false);
+        
     }
 }

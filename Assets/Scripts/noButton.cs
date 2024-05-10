@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class noButton : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class noButton : MonoBehaviour
     public void OnMouseDown()
     {
         hagglePrice(_shopManager.currentSelling);
+    }
+
+    private void Start()
+    {
+        randomNum = Random.Range(0, 6);
+        bigRandomNum = Random.Range(15, 20);
     }
 
     private void hagglePrice(sellProduce sellProduce)
@@ -39,10 +46,16 @@ public class noButton : MonoBehaviour
                 _shopManager.money += numPrice;
                 _shopManager.moneyCounter.text = _shopManager.money.ToString();
                 sellProduce.textComp.text = "accepted";
+                sellProduce.clicked = false;
+                Destroy(sellProduce.seed);
+                sellProduce.gameObject.SetActive(false);
             }
             else //if number suggested is too big their plant wont be bought
             {
                 sellProduce.textComp.text = "denied, i will no longer buy";
+                sellProduce.clicked = false;
+                Destroy(sellProduce.seed);
+                sellProduce.gameObject.SetActive(false);
             }
         }
     }
