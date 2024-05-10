@@ -30,6 +30,10 @@ public class inputPrice : MonoBehaviour
     [SerializeField] private Button sellTwo;
     [SerializeField] private Button sellThree;
 
+    private float thankYouTime = 0f;
+    private sellProduce activeSellProduce = null;
+    private bool thankYouActive = false;
+
     private void Start()
     {
         randomNum = Random.Range(0, 6); //generates random number
@@ -38,7 +42,20 @@ public class inputPrice : MonoBehaviour
         Debug.Log(bigRandomNum);
     }
 
-   
+    private void Update()
+    {
+        if (thankYouActive && Time.time > thankYouTime)
+        {
+            thankYouActive = false;
+            activeSellProduce.textComp.text = "";
+            inputField.Select();
+            inputField.text = "";
+            activeSellProduce.backgroundImage.SetActive(false);
+            gameObject.SetActive(false);
+            activeSellProduce = null;
+        }
+    }
+
     public void getSeed() //checks which seed is being sold
     {
         if (_sellProduce1.clicked)
@@ -57,34 +74,39 @@ public class inputPrice : MonoBehaviour
     public IEnumerator setPrice(sellProduce sellProduce) 
     {
         playerAnswer = inputField.text;
+        activeSellProduce = sellProduce;
+        float textTime = Time.time + 3;
+        bool errorBool = false;
 
-        yield return new WaitForSeconds(3);
-        
+        //yield return new WaitForSeconds(3);
+        while (thankYouActive == false)
+        {
             if (playerAnswer == "yes") //if player agrees with price sell seed and give them the money
             {
                 isRunning = false;
                 money += sellProduce.price;
                 sellProduce.textComp.text = "thank you";
                 moneyCounter.text = money.ToString();
-                yield return new WaitForSeconds(3);isRunning = true;
-                sellProduce.textComp.text = "";
-                inputField.Select();
-                inputField.text = "";
-                sellProduce.backgroundImage.SetActive(false);
-                gameObject.SetActive(false);
+                thankYouTime = Time.time + 3;
+                thankYouActive = true;
             }
             else if (playerAnswer == "no") //if they dont agree then they can 'haggle'
             {
                 StartCoroutine(hagglePrice(sellProduce));
+                yield break;
             }
-            else
+            else if (!errorBool && textTime < Time.time)
             {
                 sellProduce.textComp.text = "error, please retype answer";
-                StartCoroutine(setPrice(sellProduce));
+                errorBool = true;
             }
-        
+
+            yield return null;
+        }
     }
 
+    // 
+    
     IEnumerator hagglePrice(sellProduce sellProduce)
     {
         sellProduce.textComp.text = "please enter your asking price"; //allows player to pick price
