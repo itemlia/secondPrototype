@@ -15,6 +15,8 @@ public class inputPrice : MonoBehaviour
     public sellProduce _sellProduce2;
     public sellProduce _sellProduce3;
 
+    public sellProduce currentSelling;
+    
     private bool condition;
     private bool isRunning;
     private int randomNum;
@@ -42,36 +44,22 @@ public class inputPrice : MonoBehaviour
         Debug.Log(bigRandomNum);
     }
 
-    private void Update()
-    {
-        if (thankYouActive && Time.time > thankYouTime)
-        {
-            thankYouActive = false;
-            activeSellProduce.textComp.text = "";
-            inputField.Select();
-            inputField.text = "";
-            activeSellProduce.backgroundImage.SetActive(false);
-            gameObject.SetActive(false);
-            activeSellProduce = null;
-        }
-    }
+    // private void Update()
+    // {
+    //     if (thankYouActive && Time.time > thankYouTime)
+    //     {
+    //         thankYouActive = false;
+    //         activeSellProduce.textComp.text = "";
+    //         inputField.Select();
+    //         inputField.text = "";
+    //         activeSellProduce.backgroundImage.SetActive(false);
+    //         gameObject.SetActive(false);
+    //         activeSellProduce = null;
+    //     }
+    // }
 
-    public void getSeed() //checks which seed is being sold
-    {
-        if (_sellProduce1.clicked)
-        {
-            StartCoroutine(setPrice(_sellProduce1));
-        }
-        else if (_sellProduce2.clicked)
-        {
-            StartCoroutine(setPrice(_sellProduce2));
-        } 
-        else if (_sellProduce3.clicked)
-        {
-            StartCoroutine(setPrice(_sellProduce3));
-        }
-    }
-    public IEnumerator setPrice(sellProduce sellProduce) 
+    
+    public void setPrice(sellProduce sellProduce) 
     {
         playerAnswer = inputField.text;
         activeSellProduce = sellProduce;
@@ -93,7 +81,7 @@ public class inputPrice : MonoBehaviour
             else if (playerAnswer == "no") //if they dont agree then they can 'haggle'
             {
                 StartCoroutine(hagglePrice(sellProduce));
-                yield break;
+               
             }
             else if (!errorBool && textTime < Time.time)
             {
@@ -101,7 +89,7 @@ public class inputPrice : MonoBehaviour
                 errorBool = true;
             }
 
-            yield return null;
+          
         }
     }
 
