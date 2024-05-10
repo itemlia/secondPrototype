@@ -10,22 +10,15 @@ using Image = UnityEngine.UI.Image;
 public class sellProduce : MonoBehaviour
 {
     public TextMeshProUGUI textComp;
-    public GameObject backgroundImage;
+    public GameObject yesNO;
     public int price;
     public bool clicked;
     
-    [SerializeField] private GameObject yesBtn;
-    [SerializeField] private GameObject noBtn;
-    
     [SerializeField] private string sellingPrice;
-    
-    [SerializeField] private inputPrice _inputPrice;
 
     public void OnMouseDown()
     {
-        backgroundImage.SetActive(true);
-        yesBtn.SetActive(true);
-        noBtn.SetActive(true);
+        yesNO.SetActive(true);
         textComp.text = sellingPrice;
         clicked = true;
     }
