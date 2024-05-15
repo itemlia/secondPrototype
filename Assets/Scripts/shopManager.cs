@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,6 +14,11 @@ public class shopManager : MonoBehaviour
     public int money;
 
     public sellProduce currentSelling;
+
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     public void Update() //checks which seed is being sold
     {

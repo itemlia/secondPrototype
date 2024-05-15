@@ -8,8 +8,8 @@ public class buyItem : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI moneyText;
 
-    private itemDesc _itemDesc;
-    private shopManager _shopManager;
+    [SerializeField] private itemDesc _itemDesc;
+    [SerializeField] private shopManager _shopManager;
 
     public void OnMouseDown()
     {
