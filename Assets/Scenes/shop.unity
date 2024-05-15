@@ -271,6 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: seeds that let you grow apples its costs 10
   textComp: {fileID: 1540519754}
+  _buyItem: {fileID: 0}
   item: {fileID: 101436919}
   itemPrice: 10
   itemName: apple
@@ -514,6 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: seeds that let you grow blueberries its costs 10
   textComp: {fileID: 1540519754}
+  _buyItem: {fileID: 0}
   item: {fileID: 181613632}
   itemPrice: 10
   itemName: blueberry
@@ -1019,6 +1021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: seeds that let you grow purple grapes its costs 10
   textComp: {fileID: 1540519754}
+  _buyItem: {fileID: 0}
   item: {fileID: 604794770}
   itemPrice: 10
   itemName: p grapes
@@ -1170,6 +1173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: seeds that let you grow turnips its costs 5
   textComp: {fileID: 1540519754}
+  _buyItem: {fileID: 1741910177}
   item: {fileID: 642202976}
   itemPrice: 5
   itemName: turnip
@@ -1405,6 +1409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: seeds that let you grow potatoes its costs 5
   textComp: {fileID: 1540519754}
+  _buyItem: {fileID: 0}
   item: {fileID: 672860487}
   itemPrice: 5
   itemName: potato
@@ -1556,6 +1561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1def140215b2e474fb97278cfbdb8ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  money: {fileID: 896416327}
 --- !u!1 &921692605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,6 +1710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: seeds that let you grow orange its costs 5
   textComp: {fileID: 1540519754}
+  _buyItem: {fileID: 0}
   item: {fileID: 921692605}
   itemPrice: 5
   itemName: orange
@@ -1855,6 +1862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: seeds that let you grow green grapes its costs 10
   textComp: {fileID: 1540519754}
+  _buyItem: {fileID: 0}
   item: {fileID: 929971211}
   itemPrice: 10
   itemName: g grapes
@@ -2090,6 +2098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: seeds that let you grow rasberries its costs 10
   textComp: {fileID: 1540519754}
+  _buyItem: {fileID: 0}
   item: {fileID: 1311476557}
   itemPrice: 10
   itemName: rasberry
@@ -2147,6 +2156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: seeds that let you grow carrots its costs 5
   textComp: {fileID: 1540519754}
+  _buyItem: {fileID: 1741910177}
   item: {fileID: 1469211556}
   itemPrice: 5
   itemName: carrot seeds
@@ -2503,6 +2513,7 @@ MonoBehaviour:
   moneyText: {fileID: 283103675}
   _itemDesc: {fileID: 0}
   _shopManager: {fileID: 0}
+  itemBought: {fileID: 0}
 --- !u!114 &1741910178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2947,6 +2958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: seeds that let you grow lemon its costs 5
   textComp: {fileID: 1540519754}
+  _buyItem: {fileID: 0}
   item: {fileID: 1850998498}
   itemPrice: 5
   itemName: lemon
@@ -3098,6 +3110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: seeds that let you grow tomatoes its costs 5
   textComp: {fileID: 1540519754}
+  _buyItem: {fileID: 1741910177}
   item: {fileID: 1873576745}
   itemPrice: 5
   itemName: tomato
@@ -3249,6 +3262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDescription: seeds that let you grow cherry its costs 10
   textComp: {fileID: 1540519754}
+  _buyItem: {fileID: 0}
   item: {fileID: 1996027272}
   itemPrice: 10
   itemName: cherry

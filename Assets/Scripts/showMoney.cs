@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class showMoney : MonoBehaviour
 {
-    private TextMeshProUGUI money;
+    [SerializeField] private TextMeshProUGUI money;
     private shopManager _shopManager;
 
     private void Start()

@@ -13,7 +13,11 @@ public class buyItem : MonoBehaviour
     
     public GameObject itemBought;
 
-    
+    private void Update()
+    {
+        
+    }
+
     public void OnMouseDown()
     {
         if (_shopManager.money > _itemDesc.itemPrice)
