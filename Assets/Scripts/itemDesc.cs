@@ -9,7 +9,9 @@ public class itemDesc : MonoBehaviour
 {
     [SerializeField] private string itemDescription;
     [SerializeField] private TextMeshProUGUI textComp;
-
+    
+    private buyItem _buyItem;
+    
     public GameObject item;
     public int itemPrice;
     public string itemName;
@@ -22,5 +24,7 @@ public class itemDesc : MonoBehaviour
     public void OnMouseDown()
     {
         textComp.text = itemDescription;
+        _buyItem.itemBought = item;
+
     }
 }

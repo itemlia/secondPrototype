@@ -10,7 +10,10 @@ public class buyItem : MonoBehaviour
 
     [SerializeField] private itemDesc _itemDesc;
     [SerializeField] private shopManager _shopManager;
+    
+    public GameObject itemBought;
 
+    
     public void OnMouseDown()
     {
         if (_shopManager.money > _itemDesc.itemPrice)
