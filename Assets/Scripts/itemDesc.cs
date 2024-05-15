@@ -18,13 +18,13 @@ public class itemDesc : MonoBehaviour
 
     private void Start()
     {
-        ItemDesc = this;
+        ItemDesc = this; //sets the current item
     }
 
     public void OnMouseDown()
     {
         textComp.text = itemDescription;
-        _buyItem._itemDesc = ItemDesc;
+        _buyItem._itemDesc = ItemDesc; //tells the buyItem script what item is wanting to be bought
 
     }
 }
