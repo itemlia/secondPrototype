@@ -15,13 +15,23 @@ public class shopManager : MonoBehaviour
 
     public sellProduce currentSelling;
 
-    private void Start()
+    private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        var shopManCount = FindObjectsOfType<shopManager>().Length; //sttops the shop manager from duplicating
+
+        if (shopManCount > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     public void Update() //checks which seed is being sold
     {
+        
         if (_sellProduce1.clicked)
         {
             currentSelling = _sellProduce1;

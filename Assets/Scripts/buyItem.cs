@@ -7,22 +7,20 @@ using UnityEngine;
 public class buyItem : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI moneyText;
-
-    [SerializeField] private itemDesc _itemDesc;
     [SerializeField] private shopManager _shopManager;
     
-    public GameObject itemBought;
+    public itemDesc _itemDesc;
 
     private void Update()
     {
-        
+        _shopManager = GameObject.Find("shop manager").GetComponent<shopManager>();
     }
 
     public void OnMouseDown()
     {
-        if (_shopManager.money > _itemDesc.itemPrice)
+        if (_shopManager.money > _itemDesc.itemPrice) //if the players money is mroe than the price
         {
-            _shopManager.money -= _itemDesc.itemPrice;
+            _shopManager.money -= _itemDesc.itemPrice; //player can buy the item
             moneyText.text = "you have bought " + _itemDesc.itemName;
         }
         else

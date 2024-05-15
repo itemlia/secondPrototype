@@ -4,26 +4,27 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class itemDesc : MonoBehaviour
 {
     [SerializeField] private string itemDescription;
     [SerializeField] private TextMeshProUGUI textComp;
     [SerializeField] private buyItem _buyItem;
+    [SerializeField] private itemDesc ItemDesc;
     
-    public GameObject item;
     public int itemPrice;
     public string itemName;
 
     private void Start()
     {
-        item = gameObject;
+        ItemDesc = this;
     }
 
     public void OnMouseDown()
     {
         textComp.text = itemDescription;
-        _buyItem.itemBought = item;
+        _buyItem._itemDesc = ItemDesc;
 
     }
 }
