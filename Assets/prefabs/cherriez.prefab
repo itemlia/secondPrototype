@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 5636735057348998754}
   - component: {fileID: 342113363781054836}
   m_Layer: 3
-  m_Name: carrot
+  m_Name: cherriez
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,7 +229,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1777795494, guid: 5bc3258e18e5e4045b15ac0660c2ff00, type: 3}
+  m_Sprite: {fileID: 1205299623, guid: 5bc3258e18e5e4045b15ac0660c2ff00, type: 3}
   m_Color: {r: 0.90555274, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
   barBackgrnd: {fileID: 0}
   offset: {x: 0, y: 0, z: -1}
   scale: {x: 0.03, y: 0, z: 0}
-  sprite: {fileID: 399983443, guid: 5bc3258e18e5e4045b15ac0660c2ff00, type: 3}
+  sprite: {fileID: -911026510, guid: 5bc3258e18e5e4045b15ac0660c2ff00, type: 3}
   distance: 1
   textComp: {fileID: 2408533699951001524}
   click: {fileID: 5636735057348998754}

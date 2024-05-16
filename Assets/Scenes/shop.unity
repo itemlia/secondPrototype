@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &66726040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 66726042}
+  - component: {fileID: 66726041}
+  m_Layer: 0
+  m_Name: item array manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &66726041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66726040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e0b6f0a7e6111408e4c7182523c7f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boughtItems: []
+  currentSceneName: 
+--- !u!4 &66726042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66726040}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.850448, y: -1.8468179, z: 0.046134993}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &101436919
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +319,7 @@ MonoBehaviour:
   textComp: {fileID: 1540519754}
   _buyItem: {fileID: 1741910177}
   ItemDesc: {fileID: 0}
+  itemPrefab: {fileID: 1040592462732660519, guid: 31061c91d56ea46499bc15de2cd34570, type: 3}
   itemPrice: 10
   itemName: apple
 --- !u!1 &136065433
@@ -517,6 +564,7 @@ MonoBehaviour:
   textComp: {fileID: 1540519754}
   _buyItem: {fileID: 1741910177}
   ItemDesc: {fileID: 0}
+  itemPrefab: {fileID: 1040592462732660519, guid: c3964787b656615478405cc7715bb694, type: 3}
   itemPrice: 10
   itemName: blueberry
 --- !u!1 &283103673
@@ -1170,6 +1218,7 @@ MonoBehaviour:
   textComp: {fileID: 1540519754}
   _buyItem: {fileID: 1741910177}
   ItemDesc: {fileID: 0}
+  itemPrefab: {fileID: 1040592462732660519, guid: a237ca40bab6cfe40830ad21547c3b99, type: 3}
   itemPrice: 10
   itemName: p grapes
 --- !u!1 &642202976
@@ -1322,6 +1371,7 @@ MonoBehaviour:
   textComp: {fileID: 1540519754}
   _buyItem: {fileID: 1741910177}
   ItemDesc: {fileID: 0}
+  itemPrefab: {fileID: 1040592462732660519, guid: 885a09cb3a2572a4f88c7c1b76c3809b, type: 3}
   itemPrice: 5
   itemName: turnip
 --- !u!1 &657660192
@@ -1558,6 +1608,7 @@ MonoBehaviour:
   textComp: {fileID: 1540519754}
   _buyItem: {fileID: 1741910177}
   ItemDesc: {fileID: 0}
+  itemPrefab: {fileID: 1040592462732660519, guid: 698db57b14c562840a5a8df01520e163, type: 3}
   itemPrice: 5
   itemName: potato
 --- !u!1 &896416325
@@ -1859,6 +1910,7 @@ MonoBehaviour:
   textComp: {fileID: 1540519754}
   _buyItem: {fileID: 1741910177}
   ItemDesc: {fileID: 0}
+  itemPrefab: {fileID: 1040592462732660519, guid: 4b4de78a138805f489ea7e3b4ae64236, type: 3}
   itemPrice: 5
   itemName: orange
 --- !u!1 &929971211
@@ -2011,6 +2063,7 @@ MonoBehaviour:
   textComp: {fileID: 1540519754}
   _buyItem: {fileID: 1741910177}
   ItemDesc: {fileID: 0}
+  itemPrefab: {fileID: 1040592462732660519, guid: 2fa2a28ee80180541b802ca03464daab, type: 3}
   itemPrice: 10
   itemName: g grapes
 --- !u!1 &960245810
@@ -2382,6 +2435,7 @@ MonoBehaviour:
   textComp: {fileID: 1540519754}
   _buyItem: {fileID: 1741910177}
   ItemDesc: {fileID: 0}
+  itemPrefab: {fileID: 1040592462732660519, guid: ae0e91af4e7508941b0b0e81d1deb246, type: 3}
   itemPrice: 10
   itemName: rasberry
 --- !u!1 &1469211556
@@ -2440,6 +2494,7 @@ MonoBehaviour:
   textComp: {fileID: 1540519754}
   _buyItem: {fileID: 1741910177}
   ItemDesc: {fileID: 0}
+  itemPrefab: {fileID: 1040592462732660519, guid: 19a3d32eea5fe9c47941efc85cdcaa7a, type: 3}
   itemPrice: 5
   itemName: carrot seeds
 --- !u!114 &1469211559
@@ -2794,6 +2849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyText: {fileID: 283103675}
   _shopManager: {fileID: 0}
+  _itemArray: {fileID: 0}
   _itemDesc: {fileID: 0}
 --- !u!114 &1741910178
 MonoBehaviour:
@@ -3242,6 +3298,7 @@ MonoBehaviour:
   textComp: {fileID: 1540519754}
   _buyItem: {fileID: 1741910177}
   ItemDesc: {fileID: 0}
+  itemPrefab: {fileID: 1040592462732660519, guid: 01dcc561779791b4caa85fcb45368d0c, type: 3}
   itemPrice: 5
   itemName: lemon
 --- !u!1 &1873576745
@@ -3394,6 +3451,7 @@ MonoBehaviour:
   textComp: {fileID: 1540519754}
   _buyItem: {fileID: 1741910177}
   ItemDesc: {fileID: 0}
+  itemPrefab: {fileID: 1040592462732660519, guid: ca0f6c35ba115c14fb60415f97ec7560, type: 3}
   itemPrice: 5
   itemName: tomato
 --- !u!1 &1996027272
@@ -3546,5 +3604,6 @@ MonoBehaviour:
   textComp: {fileID: 1540519754}
   _buyItem: {fileID: 1741910177}
   ItemDesc: {fileID: 0}
+  itemPrefab: {fileID: 1040592462732660519, guid: a017c524bc764404080c1df922465c29, type: 3}
   itemPrice: 10
   itemName: cherry
