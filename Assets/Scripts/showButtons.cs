@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class showButtons : MonoBehaviour
 {
     [SerializeField] private GameObject emptyCanvasGO;
-
+    [SerializeField] private GameObject waterBar;
     [SerializeField] private Button click;
 
     public void Start()
@@ -19,5 +19,6 @@ public class showButtons : MonoBehaviour
     public void buttonsActive()
     {
         emptyCanvasGO.SetActive(true);
+        waterBar.transform.localScale = new Vector3(0.0f, 0.33f, 1.0f);
     }
 }
