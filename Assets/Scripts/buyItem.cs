@@ -8,6 +8,7 @@ public class buyItem : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private shopManager _shopManager;
+    [SerializeField] private itemArray _itemArray;
     
     public itemDesc _itemDesc;
 
@@ -22,6 +23,9 @@ public class buyItem : MonoBehaviour
         {
             _shopManager.money -= _itemDesc.itemPrice; //player can buy the item
             moneyText.text = "you have bought " + _itemDesc.itemName;
+            
+            _itemArray.boughtItems.Add(_itemDesc
+                .itemPrefab); //adds the prefab of the item into the list so it can be instatntiated into the level
         }
         else
         {

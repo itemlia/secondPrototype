@@ -13,6 +13,8 @@ public class itemDesc : MonoBehaviour
     [SerializeField] private buyItem _buyItem;
     [SerializeField] private itemDesc ItemDesc;
     
+    public GameObject itemPrefab;
+    
     public int itemPrice;
     public string itemName;
 
