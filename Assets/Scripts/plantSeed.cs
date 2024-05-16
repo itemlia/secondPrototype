@@ -1,4 +1,5 @@
 
+using System;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
@@ -7,7 +8,6 @@ using UnityEngine;
 public class plantSeed : MonoBehaviour
 {
    [SerializeField] private GameObject waterBar;
-   [SerializeField] private GameObject stem;
    [SerializeField] private GameObject trimPlant;
    [SerializeField] private GameObject barBackgrnd;
    
@@ -27,6 +27,12 @@ public class plantSeed : MonoBehaviour
    {
       var btn = click.GetComponent<Button>();
       btn.onClick.AddListener(WaterSeed);
+   }
+
+   private void Awake()
+   {
+      barBackgrnd = GameObject.Find("bar background");
+      waterBar = GameObject.Find("water b");
    }
 
    private void Update()

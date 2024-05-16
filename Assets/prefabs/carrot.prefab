@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6251085989083132854}
   - component: {fileID: 6127546592115753730}
   - component: {fileID: 2026315312335920533}
-  - component: {fileID: 7633436816883654643}
+  - component: {fileID: 6125079803513483974}
   m_Layer: 0
   m_Name: cut plants
   m_TagString: Untagged
@@ -123,9 +123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7633436816883654643}
-        m_TargetAssemblyTypeName: showButtons, Assembly-CSharp
-        m_MethodName: buttonsActive
+      - m_Target: {fileID: 6125079803513483974}
+        m_TargetAssemblyTypeName: cutPlantPrefabVer, Assembly-CSharp
+        m_MethodName: OnMouseDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -135,7 +135,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7633436816883654643
+--- !u!114 &6125079803513483974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,12 +144,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 434216898258208110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3ebc209084deda4190a7a8eab4bfd23, type: 3}
+  m_Script: {fileID: 11500000, guid: 19c9856ab4c8cb647ac88100dc338cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emptyCanvasGO: {fileID: 0}
   waterBar: {fileID: 0}
   click: {fileID: 2026315312335920533}
+  invSlot: {fileID: 0}
+  seed: {fileID: 0}
 --- !u!1 &1040592462732660519
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +163,6 @@ GameObject:
   - component: {fileID: 8307701993851066375}
   - component: {fileID: 5560402886376864211}
   - component: {fileID: 4542688347664135996}
-  - component: {fileID: 6518784531066934105}
   - component: {fileID: 5636735057348998754}
   m_Layer: 3
   m_Name: carrot
@@ -297,7 +297,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterBar: {fileID: 0}
-  stem: {fileID: 0}
   trimPlant: {fileID: 434216898258208110}
   barBackgrnd: {fileID: 0}
   offset: {x: 0, y: 0, z: -1}
@@ -306,26 +305,6 @@ MonoBehaviour:
   distance: 1
   textComp: {fileID: 2408533699951001524}
   click: {fileID: 5636735057348998754}
---- !u!114 &6518784531066934105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040592462732660519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 745b065170136c44c844ffa69c895955, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonOrder: 0100000004000000020000000500000003000000
-  clickedOrder: 
-  slotOne: {fileID: 0}
-  seed: {fileID: 1040592462732660519}
-  buttons: {fileID: 0}
-  sellButton: {fileID: 0}
-  listMatch: 0
-  matchNum: 0
 --- !u!114 &5636735057348998754
 MonoBehaviour:
   m_ObjectHideFlags: 0
