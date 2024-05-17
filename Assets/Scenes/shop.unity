@@ -2849,7 +2849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyText: {fileID: 283103675}
   _shopManager: {fileID: 0}
-  _itemArray: {fileID: 0}
+  _itemArray: {fileID: 66726041}
   _itemDesc: {fileID: 0}
 --- !u!114 &1741910178
 MonoBehaviour:

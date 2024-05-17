@@ -27,16 +27,13 @@ public class plantSeed : MonoBehaviour
    {
       var btn = click.GetComponent<Button>();
       btn.onClick.AddListener(WaterSeed);
-      
-      barBackgrnd = GameObject.FindWithTag("bar bg");
-      waterBar = GameObject.FindWithTag("water b");
    }
 
-   // private void Awake()
-   // {
-   //    barBackgrnd = GameObject.Find("bar background");
-   //    waterBar = GameObject.Find("water b");
-   // }
+   private void Awake()
+   {
+      barBackgrnd = GameObject.Find("bar background");
+      waterBar = GameObject.Find("water b");
+   }
 
    private void Update()
    {
