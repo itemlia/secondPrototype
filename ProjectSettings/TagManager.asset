@@ -8,6 +8,8 @@ TagManager:
   - planted
   - chop
   - inventory
+  - bar bg
+  - water b
   layers:
   - Default
   - TransparentFX
