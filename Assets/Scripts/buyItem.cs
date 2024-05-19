@@ -19,7 +19,7 @@ public class buyItem : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (_shopManager.money > _itemDesc.itemPrice) //if the players money is mroe than the price
+        if (_shopManager.money >= _itemDesc.itemPrice) //if the players money is more than or equal to the price
         {
             _shopManager.money -= _itemDesc.itemPrice; //player can buy the item
             moneyText.text = "you have bought " + _itemDesc.itemName;

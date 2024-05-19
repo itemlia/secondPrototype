@@ -8,6 +8,11 @@ public class yesButton : MonoBehaviour
 {
     [SerializeField] private shopManager _shopManager;
 
+    private void Update()
+    {
+        _shopManager = GameObject.Find("shop manager").GetComponent<shopManager>();
+    }
+
     public void OnMouseDown()
     {
         agreeAble(_shopManager.currentSelling);

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class shopManager : MonoBehaviour
 {
@@ -31,6 +32,12 @@ public class shopManager : MonoBehaviour
 
     public void Update() //checks which seed is being sold
     {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        if (currentSceneName == "level1")
+        {
+            moneyCounter = GameObject.Find("money int").GetComponent<TextMeshProUGUI>();   
+        }
         
         if (_sellProduce1.clicked)
         {
