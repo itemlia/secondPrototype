@@ -164,7 +164,6 @@ GameObject:
   - component: {fileID: 5560402886376864211}
   - component: {fileID: 4542688347664135996}
   - component: {fileID: 5636735057348998754}
-  - component: {fileID: 342113363781054836}
   m_Layer: 3
   m_Name: turnip
   m_TagString: Untagged
@@ -362,22 +361,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &342113363781054836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040592462732660519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19c9856ab4c8cb647ac88100dc338cd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waterBar: {fileID: 0}
-  click: {fileID: 2026315312335920533}
-  invSlot: {fileID: 0}
-  seed: {fileID: 0}
 --- !u!1 &3123672602074226429
 GameObject:
   m_ObjectHideFlags: 0
