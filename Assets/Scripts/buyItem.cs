@@ -15,6 +15,7 @@ public class buyItem : MonoBehaviour
     private void Update()
     {
         _shopManager = GameObject.Find("shop manager").GetComponent<shopManager>();
+        _itemArray = GameObject.Find("item array manager").GetComponent<itemArray>();
     }
 
     public void OnMouseDown()
