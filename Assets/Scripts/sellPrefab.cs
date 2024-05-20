@@ -29,7 +29,6 @@ public class sellPrefab : MonoBehaviour
         //destroys the sold plant
         Transform parent = gameObject.transform.parent;
         Transform parentOfParent = parent.parent;
-        Destroy(parent.gameObject);
         Destroy(parentOfParent.gameObject, 1);
     }
 }

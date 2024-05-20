@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shopManager: {fileID: 860375816}
-  kaching: {fileID: 901619901}
+  _audioManager: {fileID: 901619904}
 --- !u!1 &117563780
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +478,7 @@ MonoBehaviour:
   buttonNumber: 5
   _cutPlants: {fileID: 1001320161}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &117563783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,6 +629,7 @@ MonoBehaviour:
   buttonNumber: 4
   _cutPlants: {fileID: 1001320161}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &127204297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1795,6 +1797,7 @@ MonoBehaviour:
   buttonNumber: 5
   _cutPlants: {fileID: 1053618806}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &357438464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2029,6 +2032,7 @@ MonoBehaviour:
   buttonNumber: 1
   _cutPlants: {fileID: 1001320161}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &408761446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2179,6 +2183,7 @@ MonoBehaviour:
   buttonNumber: 2
   _cutPlants: {fileID: 1053618806}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &471676106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2464,6 +2469,7 @@ MonoBehaviour:
   buttonNumber: 3
   _cutPlants: {fileID: 1053618806}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &502442306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3129,6 +3135,7 @@ MonoBehaviour:
   buttonNumber: 5
   _cutPlants: {fileID: 1817158033}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &688606956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3495,6 +3502,7 @@ MonoBehaviour:
   buttonNumber: 4
   _cutPlants: {fileID: 1817158033}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &805570152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4118,9 +4126,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 901619902}
+  - component: {fileID: 901619904}
   - component: {fileID: 901619901}
+  - component: {fileID: 901619903}
   m_Layer: 0
-  m_Name: audioSource
+  m_Name: level 1 audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4237,6 +4247,117 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &901619903
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901619900}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 260b7a240fb771c4c9e702892d4a34b7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &901619904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901619900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91217f13bc42f3e4db05cc0c9336a58c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios:
+  - {fileID: 901619901}
+  - {fileID: 901619903}
 --- !u!1 &904983990
 GameObject:
   m_ObjectHideFlags: 0
@@ -4977,6 +5098,7 @@ MonoBehaviour:
   buttonNumber: 2
   _cutPlants: {fileID: 1001320161}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &1047541863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6422,6 +6544,7 @@ MonoBehaviour:
   buttonNumber: 3
   _cutPlants: {fileID: 1817158033}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &1232897435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7550,6 +7673,7 @@ MonoBehaviour:
   buttonNumber: 1
   _cutPlants: {fileID: 1053618806}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &1489335428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7792,7 +7916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 836053283}
-  kaching: {fileID: 901619901}
+  _audioManager: {fileID: 901619904}
   _shopManager: {fileID: 860375816}
 --- !u!1 &1516909002
 GameObject:
@@ -8390,6 +8514,7 @@ MonoBehaviour:
   buttonNumber: 4
   _cutPlants: {fileID: 1053618806}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &1644474459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8677,6 +8802,7 @@ MonoBehaviour:
   buttonNumber: 2
   _cutPlants: {fileID: 1817158033}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &1666744469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8827,6 +8953,7 @@ MonoBehaviour:
   buttonNumber: 3
   _cutPlants: {fileID: 1001320161}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &1694401602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9084,6 +9211,7 @@ MonoBehaviour:
   buttonNumber: 1
   _cutPlants: {fileID: 1817158033}
   index: 0
+  _audioManager: {fileID: 0}
 --- !u!114 &1806828519
 MonoBehaviour:
   m_ObjectHideFlags: 0

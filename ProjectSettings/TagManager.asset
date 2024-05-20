@@ -10,6 +10,7 @@ TagManager:
   - inventory
   - bar bg
   - water b
+  - music
   layers:
   - Default
   - TransparentFX
