@@ -14,7 +14,7 @@ public class noButton : MonoBehaviour
     private string playerAnswer;
     
     [SerializeField] private TMP_InputField inputField;
-    
+    [SerializeField] private AudioSource kaching;
     [SerializeField] private shopManager _shopManager;
 
     public void OnMouseDown()
@@ -43,6 +43,7 @@ public class noButton : MonoBehaviour
             if ((numPrice + randomNum) <
                 bigRandomNum) //checks that number isnt too big by checking it against their price - a random value
             {
+                kaching.Play();
                 _shopManager.money += numPrice;
                 _shopManager.moneyCounter.text = _shopManager.money.ToString();
                 sellProduce.textComp.text = "accepted";

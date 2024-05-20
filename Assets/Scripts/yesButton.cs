@@ -7,6 +7,7 @@ using UnityEngine;
 public class yesButton : MonoBehaviour
 {
     [SerializeField] private shopManager _shopManager;
+    [SerializeField] private AudioSource kaching;
 
     private void Update()
     {
@@ -20,6 +21,7 @@ public class yesButton : MonoBehaviour
 
     public void agreeAble(sellProduce sellProduce)
     {
+        kaching.Play();
         _shopManager.money += sellProduce.price;
         sellProduce.textComp.text = "thank you";
         _shopManager.moneyCounter.text = _shopManager.money.ToString();
