@@ -26,8 +26,10 @@ public class sellPrefab : MonoBehaviour
         _shopManager.money += price;
         _shopManager.moneyCounter.text = _shopManager.money.ToString();
         textComp.text = "sold for " + price;
+        //destroys the sold plant
         Transform parent = gameObject.transform.parent;
         Transform parentOfParent = parent.parent;
+        Destroy(parent.gameObject);
         Destroy(parentOfParent.gameObject, 1);
     }
 }

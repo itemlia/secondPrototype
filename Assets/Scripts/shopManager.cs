@@ -30,7 +30,7 @@ public class shopManager : MonoBehaviour
         }
     }
 
-    public void Update() //checks which seed is being sold
+    public void Update() 
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
 
@@ -39,6 +39,7 @@ public class shopManager : MonoBehaviour
             moneyCounter = GameObject.Find("money int").GetComponent<TextMeshProUGUI>();   
         }
         
+        //checks which seed is being sold
         if (_sellProduce1.clicked)
         {
             currentSelling = _sellProduce1;

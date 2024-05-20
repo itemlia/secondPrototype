@@ -39,7 +39,7 @@ public class dontDest : MonoBehaviour
         }
         else
         {
-            foreach (Transform child in transform)
+            foreach (Transform child in transform)//items will then become active when back in main level
             {
                 child.gameObject.SetActive(true);
             }
