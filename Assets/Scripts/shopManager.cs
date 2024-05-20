@@ -38,6 +38,12 @@ public class shopManager : MonoBehaviour
         {
             moneyCounter = GameObject.Find("money int").GetComponent<TextMeshProUGUI>();   
         }
+
+        //when player makes enough money they finish the game
+        if (money >= 70)
+        {
+            SceneManager.LoadScene("Scenes/end screen");
+        }
         
         //checks which seed is being sold
         if (_sellProduce1.clicked)
