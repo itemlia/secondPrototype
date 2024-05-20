@@ -9,6 +9,13 @@ public class itemArray : MonoBehaviour
    public List<GameObject> boughtItems;
 
    [SerializeField] private string currentSceneName;
+   [SerializeField] private GameObject itemManager;
+
+   private void Start()
+   {
+      itemManager = GameObject.Find("item object");
+   }
+  
 
    private void Update()
    {
@@ -20,8 +27,9 @@ public class itemArray : MonoBehaviour
          {
             for (int i = 0; i < boughtItems.Count; i++)
             {
-               Instantiate(boughtItems[i]);
+               Instantiate(boughtItems[i], itemManager.transform);
                boughtItems.Remove(boughtItems[i]);
+               
 
             }
          }

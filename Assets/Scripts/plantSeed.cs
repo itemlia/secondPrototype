@@ -23,6 +23,8 @@ public class plantSeed : MonoBehaviour
    
    [SerializeField] private Button click;
 
+   
+
    public void Start()
    {
       var btn = click.GetComponent<Button>();

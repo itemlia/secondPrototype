@@ -17,6 +17,8 @@ public class sellProduce : MonoBehaviour
     
     [SerializeField] private string sellingPrice;
 
+   
+
     public void OnMouseDown()
     {
         yesNO.SetActive(true);

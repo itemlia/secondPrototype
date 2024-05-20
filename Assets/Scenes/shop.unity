@@ -123,52 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &66726040
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 66726042}
-  - component: {fileID: 66726041}
-  m_Layer: 0
-  m_Name: item array manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &66726041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66726040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e0b6f0a7e6111408e4c7182523c7f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boughtItems: []
-  currentSceneName: 
---- !u!4 &66726042
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66726040}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.850448, y: -1.8468179, z: 0.046134993}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &101436919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,7 +2803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyText: {fileID: 283103675}
   _shopManager: {fileID: 0}
-  _itemArray: {fileID: 66726041}
+  _itemArray: {fileID: 0}
   _itemDesc: {fileID: 0}
 --- !u!114 &1741910178
 MonoBehaviour:
