@@ -147,10 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c9856ab4c8cb647ac88100dc338cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterBar: {fileID: 0}
-  click: {fileID: 2026315312335920533}
-  invSlot: {fileID: 0}
-  seed: {fileID: 0}
+  price: 10
+  textComp: {fileID: 2408533699951001524}
 --- !u!1 &1040592462732660519
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: trim plant
+  m_text: sell produce
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

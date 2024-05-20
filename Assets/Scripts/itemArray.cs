@@ -20,7 +20,6 @@ public class itemArray : MonoBehaviour
          {
             for (int i = 0; i < boughtItems.Count; i++)
             {
-               Debug.Log(boughtItems[i]);
                Instantiate(boughtItems[i]);
                boughtItems.Remove(boughtItems[i]);
 
